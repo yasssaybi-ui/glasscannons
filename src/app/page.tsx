@@ -233,7 +233,7 @@ function HomeBlocksContent() {
         const featuredMatch = displayNextMatch || lastMatches[0];
 
         return (
-          <section key={block.id} className="py-24 bg-[#050505] relative z-20 border-t border-white/5 overflow-hidden">
+          <section key={block.id} className="py-12 md:py-24 border-t border-white/10 relative overflow-hidden bg-black">
             {/* Background decorative elements */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none">
               <div className="absolute top-[-10%] left-[10%] w-[40%] h-[40%] bg-[#ff5a00]/5 rounded-full blur-[120px]" />
@@ -263,31 +263,31 @@ function HomeBlocksContent() {
                           <span>{displayNextMatch ? "Prossima Partita" : "Ultimo Risultato"}</span>
                         </div>
 
-                        <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-4xl gap-2 md:gap-0">
+                        <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-4xl gap-4 md:gap-0">
                           {/* Home team on the left */}
-                          <div className="flex-1 text-center md:text-right space-y-0">
-                            <h4 className="font-heading text-2xl md:text-4xl font-black text-white uppercase tracking-wider">
+                          <div className="flex-1 text-center md:text-right space-y-0 w-full px-2">
+                            <h4 className="font-heading text-2xl md:text-4xl font-black text-white uppercase tracking-wider break-words">
                               {featuredMatch.isHome !== false ? "Glass Cannons" : featuredMatch.opponent}
                             </h4>
                           </div>
 
                           {/* Score / VS */}
-                          <div className="flex flex-col items-center px-8 md:px-12 py-2 md:py-0">
+                          <div className="flex flex-col items-center px-4 sm:px-8 md:px-12 py-2 md:py-0 shrink-0">
                             {displayNextMatch ? (
                               <div className="text-4xl md:text-6xl font-heading font-black text-white/20 uppercase tracking-tighter">VS</div>
                             ) : (
-                              <div className="flex items-center gap-4 md:gap-8">
+                              <div className="flex items-center gap-3 sm:gap-4 md:gap-8">
                                 {featuredMatch.isHome !== false ? (
                                   <>
-                                    <span className={`text-5xl md:text-7xl font-heading font-black ${featuredMatch.we > featuredMatch.they ? 'text-[#ff5a00]' : 'text-white'}`}>{featuredMatch.we}</span>
-                                    <span className="text-2xl md:text-4xl font-heading font-black text-gray-700">-</span>
-                                    <span className={`text-5xl md:text-7xl font-heading font-black ${featuredMatch.they > featuredMatch.we ? 'text-[#ff5a00]' : 'text-white'}`}>{featuredMatch.they}</span>
+                                    <span className={`text-4xl sm:text-5xl md:text-7xl font-heading font-black ${featuredMatch.we > featuredMatch.they ? 'text-[#ff5a00]' : 'text-white'}`}>{featuredMatch.we}</span>
+                                    <span className="text-xl sm:text-2xl md:text-4xl font-heading font-black text-gray-700">-</span>
+                                    <span className={`text-4xl sm:text-5xl md:text-7xl font-heading font-black ${featuredMatch.they > featuredMatch.we ? 'text-[#ff5a00]' : 'text-white'}`}>{featuredMatch.they}</span>
                                   </>
                                 ) : (
                                   <>
-                                    <span className={`text-5xl md:text-7xl font-heading font-black ${featuredMatch.they > featuredMatch.we ? 'text-[#ff5a00]' : 'text-white'}`}>{featuredMatch.they}</span>
-                                    <span className="text-2xl md:text-4xl font-heading font-black text-gray-700">-</span>
-                                    <span className={`text-5xl md:text-7xl font-heading font-black ${featuredMatch.we > featuredMatch.they ? 'text-[#ff5a00]' : 'text-white'}`}>{featuredMatch.we}</span>
+                                    <span className={`text-4xl sm:text-5xl md:text-7xl font-heading font-black ${featuredMatch.they > featuredMatch.we ? 'text-[#ff5a00]' : 'text-white'}`}>{featuredMatch.they}</span>
+                                    <span className="text-xl sm:text-2xl md:text-4xl font-heading font-black text-gray-700">-</span>
+                                    <span className={`text-4xl sm:text-5xl md:text-7xl font-heading font-black ${featuredMatch.we > featuredMatch.they ? 'text-[#ff5a00]' : 'text-white'}`}>{featuredMatch.we}</span>
                                   </>
                                 )}
                               </div>
@@ -295,8 +295,8 @@ function HomeBlocksContent() {
                           </div>
 
                           {/* Away team on the right */}
-                          <div className="flex-1 text-center md:text-left space-y-0">
-                            <h4 className="font-heading text-2xl md:text-4xl font-black text-white uppercase tracking-wider">
+                          <div className="flex-1 text-center md:text-left space-y-0 w-full px-2">
+                            <h4 className="font-heading text-2xl md:text-4xl font-black text-white uppercase tracking-wider break-words">
                               {featuredMatch.isHome !== false ? featuredMatch.opponent : "Glass Cannons"}
                             </h4>
                           </div>
@@ -569,7 +569,7 @@ function HomeBlocksContent() {
 
       case 'features':
         return (
-          <section key={block.id} className="py-20 bg-[#0a0a0a] border-t border-white/5">
+          <section className="py-10 md:py-16 bg-[#0a0a0a] border-t border-white/5 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div
                 className="grid grid-cols-1 md:grid-cols-3 gap-8"
@@ -642,7 +642,7 @@ function HomeBlocksContent() {
 
       case 'gallery':
         return (
-          <section key={block.id} className="py-20 bg-black relative border-t border-white/5">
+          <section key={block.id} className="py-10 md:py-20 bg-black relative border-t border-white/5">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <h2 className="text-[#ff5a00] font-bold tracking-widest uppercase text-2xl mb-12 text-center font-heading">Galleria Immagini</h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -767,7 +767,7 @@ function HomeBlocksContent() {
               <Editable as="h2" blockId={block.id} field="title" initialValue={block.title || "Dati Dinamici"} className="font-heading font-bold tracking-widest uppercase text-3xl mb-8" />
 
               {dataType === 'nextMatch' && (
-                <div className="bg-black/50 border border-white/10 rounded-lg p-8 w-full max-w-2xl text-center backdrop-blur-sm relative overflow-hidden group hover:border-[#ff5a00]/30 transition-colors">
+                <div className="bg-black/50 border border-white/10 rounded-lg p-6 sm:p-8 w-full max-w-2xl text-center backdrop-blur-sm relative overflow-hidden group hover:border-[#ff5a00]/30 transition-colors">
                   <div className="mb-4 text-[#ff5a00] font-bold uppercase tracking-wider text-sm flex items-center justify-center space-x-2">
                     <Calendar className="w-5 h-5" />
                     <span>Prossimo Incontro</span>
@@ -829,30 +829,32 @@ function HomeBlocksContent() {
                   <table className="w-full text-left text-sm text-gray-400">
                     <thead className="text-[10px] uppercase bg-black/60 text-[#ff5a00] font-bold tracking-[0.2em] border-b border-white/10">
                       <tr>
-                        <th className="px-6 py-4 w-12 text-center">#</th>
-                        <th className="px-6 py-4">Squadra</th>
-                        <th className="px-6 py-4 text-center">PT</th>
-                        <th className="px-6 py-4 text-center">G</th>
-                        <th className="px-6 py-4 text-center hidden md:table-cell">V</th>
+                        <th className="p-2 sm:px-6 sm:py-4 w-12 text-center">#</th>
+                        <th className="p-2 sm:px-6 sm:py-4">Squadra</th>
+                        <th className="p-2 sm:px-6 sm:py-4 text-center">PT</th>
+                        <th className="p-2 sm:px-6 sm:py-4 text-center hidden sm:table-cell">G</th>
+                        <th className="p-2 sm:px-6 sm:py-4 text-center hidden sm:table-cell">V</th>
+                        <th className="p-2 sm:px-6 sm:py-4 text-center">DR</th>
                       </tr>
                     </thead>
                     <tbody>
                       {loadingMatches ? (
                         [1,2,3,4,5].map(i => (
                           <tr key={i} className="border-b border-white/5">
-                            <td colSpan={5} className="py-4 px-6"><div className="h-4 bg-white/5 rounded w-full animate-pulse"></div></td>
+                            <td colSpan={6} className="py-4 px-6"><div className="h-4 bg-white/5 rounded w-full animate-pulse"></div></td>
                           </tr>
                         ))
                       ) : standings.slice(0, 5).map((team) => (
                         <tr key={team.team} className={`border-b border-white/5 hover:bg-white/[0.03] transition-colors ${team.team === 'Glass Cannons' ? 'bg-[#ff5a00]/5' : ''}`}>
-                          <td className="px-6 py-4 text-center font-heading font-bold text-gray-500">{team.pos}</td>
-                          <td className={`px-6 py-4 font-bold ${team.team === 'Glass Cannons' ? 'text-white' : 'text-gray-400'}`}>
+                          <td className="p-2 sm:px-6 sm:py-4 text-center font-heading font-bold text-gray-500">{team.pos}</td>
+                          <td className={`p-2 sm:px-6 sm:py-4 font-bold text-sm sm:text-base ${team.team === 'Glass Cannons' ? 'text-white' : 'text-gray-400'}`}>
                             {team.team}
                             {team.team === 'Glass Cannons' && <span className="ml-2 w-1.5 h-1.5 rounded-full bg-[#ff5a00] inline-block animate-pulse" />}
                           </td>
-                          <td className={`px-6 py-4 text-center font-heading font-bold text-lg ${team.team === 'Glass Cannons' ? 'text-[#ff5a00]' : 'text-white'}`}>{team.pts}</td>
-                          <td className="px-6 py-4 text-center">{team.p}</td>
-                          <td className="px-6 py-4 text-center hidden md:table-cell">{team.w}</td>
+                          <td className={`p-2 sm:px-6 sm:py-4 text-center font-heading font-bold text-base sm:text-lg ${team.team === 'Glass Cannons' ? 'text-[#ff5a00]' : 'text-white'}`}>{team.pts}</td>
+                          <td className="p-2 sm:px-6 sm:py-4 text-center text-gray-400 hidden sm:table-cell">{team.p}</td>
+                          <td className="p-2 sm:px-6 sm:py-4 text-center text-gray-400 hidden sm:table-cell">{team.w}</td>
+                          <td className="p-2 sm:px-6 sm:py-4 text-center text-gray-400 text-sm sm:text-base">{team.gd > 0 ? `+${team.gd}` : team.gd}</td>
                         </tr>
                       ))}
                     </tbody>

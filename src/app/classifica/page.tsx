@@ -108,19 +108,19 @@ export default function Classifica() {
                         className="bg-[#0f0f0f] border border-white/10 rounded-lg overflow-hidden"
                     >
                         <div className="overflow-x-auto">
-                            <table className="w-full text-left border-collapse min-w-[600px]">
+                            <table className="w-full text-left border-collapse min-w-full sm:min-w-[600px]">
                                 <thead>
                                     <tr className="bg-black border-b border-white/10 text-gray-500 font-heading text-sm uppercase tracking-wider">
-                                        <th className="p-4 w-12 text-center">#</th>
-                                        <th className="p-4">Squadra</th>
-                                        <th className="p-4 text-center">Pt</th>
-                                        <th className="p-4 text-center">G</th>
-                                        <th className="p-4 text-center hidden sm:table-cell">V</th>
-                                        <th className="p-4 text-center hidden sm:table-cell">N</th>
-                                        <th className="p-4 text-center hidden sm:table-cell">P</th>
-                                        <th className="p-4 text-center hidden md:table-cell">GF</th>
-                                        <th className="p-4 text-center hidden md:table-cell">GS</th>
-                                        <th className="p-4 text-center hidden md:table-cell">DR</th>
+                                        <th className="p-2 sm:p-4 w-12 text-center">#</th>
+                                        <th className="p-2 sm:p-4">Squadra</th>
+                                        <th className="p-2 sm:p-4 text-center">Pt</th>
+                                        <th className="p-2 sm:p-4 text-center hidden sm:table-cell">G</th>
+                                        <th className="p-2 sm:p-4 text-center hidden sm:table-cell">V</th>
+                                        <th className="p-2 sm:p-4 text-center hidden sm:table-cell">N</th>
+                                        <th className="p-2 sm:p-4 text-center hidden sm:table-cell">P</th>
+                                        <th className="p-2 sm:p-4 text-center hidden md:table-cell">GF</th>
+                                        <th className="p-2 sm:p-4 text-center hidden md:table-cell">GS</th>
+                                        <th className="p-2 sm:p-4 text-center">DR</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -132,22 +132,22 @@ export default function Classifica() {
                                             key={row.team}
                                             className={`border-b border-white/5 hover:bg-white/5 transition-colors ${row.team === "Glass Cannons" ? "bg-[#ff5a00]/10" : ""}`}
                                         >
-                                            <td className="p-4 text-center font-bold text-gray-400">
+                                            <td className="p-2 sm:p-4 text-center font-bold text-gray-400">
                                                 {row.pos === 1 ? <span className="text-yellow-500">1</span> : row.pos}
                                             </td>
-                                            <td className={`p-4 font-bold ${row.team === "Glass Cannons" ? "text-white" : "text-gray-300"}`}>
+                                            <td className={`p-2 sm:p-4 font-bold text-sm sm:text-base ${row.team === "Glass Cannons" ? "text-white" : "text-gray-300"}`}>
                                                 {row.team}
                                             </td>
-                                            <td className={`p-4 text-center font-bold text-lg ${row.team === "Glass Cannons" ? "text-[#ff5a00]" : "text-white"}`}>
+                                            <td className={`p-2 sm:p-4 text-center font-bold text-base sm:text-lg ${row.team === "Glass Cannons" ? "text-[#ff5a00]" : "text-white"}`}>
                                                 {row.pts}
                                             </td>
-                                            <td className="p-4 text-center text-gray-500">{row.p}</td>
-                                            <td className="p-4 text-center text-gray-500 hidden sm:table-cell">{row.w}</td>
-                                            <td className="p-4 text-center text-gray-500 hidden sm:table-cell">{row.d}</td>
-                                            <td className="p-4 text-center text-gray-500 hidden sm:table-cell">{row.l}</td>
-                                            <td className="p-4 text-center text-gray-500 hidden md:table-cell">{row.gf}</td>
-                                            <td className="p-4 text-center text-gray-500 hidden md:table-cell">{row.ga}</td>
-                                            <td className="p-4 text-center text-gray-500 hidden md:table-cell">{row.gd > 0 ? `+${row.gd}` : row.gd}</td>
+                                            <td className="p-2 sm:p-4 text-center text-gray-500 hidden sm:table-cell">{row.p}</td>
+                                            <td className="p-2 sm:p-4 text-center text-gray-500 hidden sm:table-cell">{row.w}</td>
+                                            <td className="p-2 sm:p-4 text-center text-gray-500 hidden sm:table-cell">{row.d}</td>
+                                            <td className="p-2 sm:p-4 text-center text-gray-500 hidden sm:table-cell">{row.l}</td>
+                                            <td className="p-2 sm:p-4 text-center text-gray-500 hidden md:table-cell">{row.gf}</td>
+                                            <td className="p-2 sm:p-4 text-center text-gray-500 hidden md:table-cell">{row.ga}</td>
+                                            <td className="p-2 sm:p-4 text-center text-gray-500 text-sm sm:text-base">{row.gd > 0 ? `+${row.gd}` : row.gd}</td>
                                         </motion.tr>
                                     ))}
                                 </tbody>

@@ -141,18 +141,18 @@ export default function Squadra() {
                                                 </div>
 
                                                 {/* Main Stats Grid */}
-                                                <div className="grid grid-cols-3 gap-2 mb-4 mt-auto">
-                                                    <div className="bg-black/50 p-2 md:p-3 rounded-md border border-white/5 text-center flex flex-col justify-center">
-                                                        <p className="text-[#ff5a00] font-heading font-bold text-lg md:text-xl">{player.stats?.goals || 0}</p>
-                                                        <p className="text-[8px] md:text-[10px] text-gray-500 uppercase tracking-wider font-bold">Gol</p>
+                                                <div className="grid grid-cols-3 gap-1 sm:gap-2 mb-4 mt-auto">
+                                                    <div className="bg-black/50 p-1 sm:p-2 md:p-3 rounded-md border border-white/5 text-center flex flex-col justify-center">
+                                                        <p className="text-[#ff5a00] font-heading font-bold text-base sm:text-lg md:text-xl">{player.stats?.goals || 0}</p>
+                                                        <p className="text-[7px] sm:text-[8px] md:text-[10px] text-gray-500 uppercase tracking-wider font-bold truncate">Gol</p>
                                                     </div>
-                                                    <div className="bg-black/50 p-2 md:p-3 rounded-md border border-white/5 text-center flex flex-col justify-center">
-                                                        <p className="text-white font-heading font-bold text-lg md:text-xl">{player.stats?.assists || 0}</p>
-                                                        <p className="text-[8px] md:text-[10px] text-gray-500 uppercase tracking-wider font-bold">Assist</p>
+                                                    <div className="bg-black/50 p-1 sm:p-2 md:p-3 rounded-md border border-white/5 text-center flex flex-col justify-center">
+                                                        <p className="text-white font-heading font-bold text-base sm:text-lg md:text-xl">{player.stats?.assists || 0}</p>
+                                                        <p className="text-[7px] sm:text-[8px] md:text-[10px] text-gray-500 uppercase tracking-wider font-bold truncate">Assist</p>
                                                     </div>
-                                                    <div className="bg-black/50 p-2 md:p-3 rounded-md border border-white/5 text-center flex flex-col justify-center">
-                                                        <p className="text-white font-heading font-bold text-lg md:text-xl">{player.stats?.appearances || 0}</p>
-                                                        <p className="text-[8px] md:text-[10px] text-gray-500 uppercase tracking-wider font-bold">Pres</p>
+                                                    <div className="bg-black/50 p-1 sm:p-2 md:p-3 rounded-md border border-white/5 text-center flex flex-col justify-center">
+                                                        <p className="text-white font-heading font-bold text-base sm:text-lg md:text-xl">{player.stats?.appearances || 0}</p>
+                                                        <p className="text-[7px] sm:text-[8px] md:text-[10px] text-gray-500 uppercase tracking-wider font-bold truncate">Pres</p>
                                                     </div>
                                                 </div>
 

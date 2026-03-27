@@ -117,7 +117,7 @@ export default function Navbar() {
                                         key={link.name}
                                         href={link.href}
                                         onClick={() => setIsOpen(false)}
-                                        className={`block px-3 py-2 rounded-md font-heading uppercase tracking-wider ${isActive
+                                        className={`block px-4 py-3 text-sm rounded-md font-heading uppercase tracking-wider ${isActive
                                             ? "bg-[#ff5a00]/10 text-[#ff5a00]"
                                             : "text-gray-300 hover:bg-white/5 hover:text-white"
                                             }`}

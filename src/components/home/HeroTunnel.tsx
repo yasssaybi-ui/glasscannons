@@ -265,7 +265,7 @@ export default function HeroTunnel({ block }: { block?: BlockData }) {
                         <Editable
                             blockId={block?.id || "hero"}
                             field="eyebrow"
-                            initialValue={block?.eyebrow || "Calcio a 7 · Stagione 2025/26"}
+                            initialValue={block?.eyebrow || "Calcio a 7 · 2025/26"}
                             className="text-[#ff5a00] font-bold uppercase tracking-[0.4em] text-[10px] md:text-xs"
                         />
                     </span>
@@ -274,7 +274,7 @@ export default function HeroTunnel({ block }: { block?: BlockData }) {
                 {/* Layer 3 — Tagline word-by-word */}
                 <motion.div
                     style={{ opacity: taglineOpacity }}
-                    className="absolute bottom-[44%] left-1/2 -translate-x-1/2 z-20 pointer-events-none whitespace-nowrap flex gap-3 md:gap-5"
+                    className="absolute bottom-[40%] md:bottom-[44%] left-1/2 -translate-x-1/2 w-full px-4 z-20 pointer-events-none flex flex-wrap justify-center gap-x-2 gap-y-1 md:gap-x-4"
                 >
                     {(block?.tagline || "NATI PER ROMPERE. COSTRUITI PER VINCERE.").split(" ").map((word: string, i: number) => (
                         <motion.span
@@ -283,7 +283,7 @@ export default function HeroTunnel({ block }: { block?: BlockData }) {
                                 opacity: useTransform(scrollYProgress, [0.26 + i * 0.012, 0.32 + i * 0.012], [0, 1]),
                                 y: useTransform(smoothProgress, [0.26 + i * 0.012, 0.32 + i * 0.012], [20, 0]),
                             }}
-                            className="text-white/65 font-heading font-bold uppercase tracking-[0.2em] text-sm md:text-xl"
+                            className="text-white/65 font-heading font-bold uppercase tracking-widest md:tracking-[0.2em] text-xs sm:text-sm md:text-xl text-center"
                         >
                             {word}
                         </motion.span>
@@ -292,9 +292,9 @@ export default function HeroTunnel({ block }: { block?: BlockData }) {
                         but here we enable inline editing by wrapping the container or adding a hidden field. 
                         Actually, Editable as a span in the tag above would be better for UX. */}
                     <div className="absolute inset-0 opacity-0 pointer-events-auto">
-                        <Editable 
-                            blockId={block?.id || "hero"} 
-                            field="tagline" 
+                        <Editable
+                            blockId={block?.id || "hero"}
+                            field="tagline"
                             initialValue={block?.tagline || "NATI PER ROMPERE. COSTRUITI PER VINCERE."}
                         />
                     </div>
@@ -343,12 +343,12 @@ export default function HeroTunnel({ block }: { block?: BlockData }) {
                 {/* ── Scroll Hint ── */}
                 <motion.div
                     style={{ opacity: useTransform(scrollYProgress, [0, 0.05], [1, 0]) }}
-                    className="absolute bottom-14 left-1/2 -translate-x-1/2 text-center z-20 pointer-events-none"
+                    className="absolute bottom-14 left-1/2 -translate-x-1/2 text-center z-20 pointer-events-none w-full px-4"
                 >
-                    <p className="text-[#ff5a00] font-bold uppercase tracking-[0.8em] text-[10px] mb-6 animate-pulse">
+                    <p className="text-[#ff5a00] font-bold uppercase tracking-widest md:tracking-[0.8em] text-[8px] md:text-[10px] mb-6 animate-pulse truncate whitespace-nowrap">
                         DESCEND INTO GLORY
                     </p>
-                    <div className="w-[2px] h-28 bg-gradient-to-b from-[#ff5a00] via-[#ff5a00]/40 to-transparent mx-auto relative overflow-hidden rounded-full">
+                    <div className="w-[2px] h-20 md:h-28 bg-gradient-to-b from-[#ff5a00] via-[#ff5a00]/40 to-transparent mx-auto relative overflow-hidden rounded-full">
                         <motion.div
                             animate={{ y: [0, 112] }}
                             transition={{ repeat: Infinity, duration: 1.4, ease: "linear" }}

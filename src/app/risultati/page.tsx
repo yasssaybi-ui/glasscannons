@@ -118,11 +118,11 @@ export default function Risultati() {
                                     animate={{ opacity: 1, scale: 1 }}
                                     transition={{ delay: i * 0.05 }}
                                     onClick={() => setSelectedMatchId(res.id)}
-                                    className={`bg-[#0f0f0f] border-l-4 rounded-r-lg p-6 flex flex-col md:flex-row items-center justify-between cursor-pointer hover:bg-white/5 transition-colors ${
+                                    className={`bg-[#0f0f0f] border-l-4 rounded-r-lg p-4 md:p-6 flex flex-col md:flex-row items-center justify-between cursor-pointer hover:bg-white/5 transition-colors ${
                                         isWin ? "border-green-500" : isLoss ? "border-red-600" : "border-yellow-500"
                                     }`}
                                 >
-                                    <div className="text-gray-500 text-sm md:w-1/4 text-center md:text-left mb-2 md:mb-0 space-y-1">
+                                    <div className="text-gray-500 text-sm md:w-1/4 text-center md:text-left mb-4 md:mb-0 space-y-1">
                                         <div>{normalizeDate(res.date).toLocaleDateString('it-IT', { day: '2-digit', month: 'long', year: 'numeric' })}</div>
                                         <div className={`inline-block text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full border ${
                                             res.isHome !== false
@@ -133,25 +133,25 @@ export default function Risultati() {
                                         </div>
                                     </div>
 
-                                    <div className="flex items-center justify-center space-x-4 md:w-1/2">
+                                    <div className="flex items-center justify-center gap-2 md:gap-4 w-full md:w-1/2">
                                         {/* Home team on the left */}
-                                        <div className="font-bold text-white text-right w-[40%]">
+                                        <div className="font-bold text-white text-right flex-1 text-sm md:text-base leading-tight break-words">
                                             {res.isHome !== false ? "Glass Cannons" : res.opponent}
                                         </div>
 
-                                        <div className="bg-black border border-white/10 px-4 py-2 rounded font-heading font-black text-xl text-white tracking-widest min-w-[80px] text-center shrink-0">
+                                        <div className="bg-black border border-white/10 px-3 md:px-4 py-2 rounded font-heading font-black text-lg md:text-xl text-white tracking-widest min-w-[70px] md:min-w-[80px] text-center shrink-0">
                                             {res.isHome !== false
                                                 ? `${res.we} - ${res.they}`
                                                 : `${res.they} - ${res.we}`}
                                         </div>
 
                                         {/* Away team on the right */}
-                                        <div className="font-bold text-gray-400 text-left w-[40%]">
+                                        <div className="font-bold text-gray-400 text-left flex-1 text-sm md:text-base leading-tight break-words">
                                             {res.isHome !== false ? res.opponent : "Glass Cannons"}
                                         </div>
                                     </div>
 
-                                    <div className="md:w-1/4 flex justify-end mt-4 md:mt-0">
+                                    <div className="md:w-1/4 flex justify-center md:justify-end mt-4 md:mt-0 w-full">
                                         <div className={`text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full ${
                                             isWin ? "bg-green-500/10 text-green-500" : isLoss ? "bg-red-500/10 text-red-500" : "bg-yellow-500/10 text-yellow-500"
                                         }`}>

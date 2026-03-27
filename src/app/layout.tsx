@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it" className="dark">
-      <body className={`${spaceMono.variable} ${syncopate.variable} font-sans antialiased bg-black text-white flex flex-col min-h-screen`}>
+      <body className={`${spaceMono.variable} ${syncopate.variable} font-sans antialiased bg-black text-white flex flex-col min-h-screen overflow-x-hidden`}>
         <Navbar />
         <main className="flex-grow">
           {children}

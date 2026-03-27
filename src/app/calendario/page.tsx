@@ -89,9 +89,9 @@ export default function Calendario() {
                             >
                                 <div className="absolute inset-0 bg-gradient-to-r from-[#ff5a00]/0 via-[#ff5a00]/5 to-[#ff5a00]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                                <div className="flex-1 mb-4 md:mb-0 text-center md:text-left relative z-10">
-                                    <div className="flex items-center justify-center md:justify-start space-x-2 text-[#ff5a00] mb-2 font-bold uppercase tracking-wider text-sm">
-                                        <CalendarIcon className="w-4 h-4" />
+                                <div className="flex-1 w-full mb-6 md:mb-0 text-center md:text-left relative z-10">
+                                    <div className="flex items-center justify-center md:justify-start space-x-2 text-[#ff5a00] mb-4 font-bold uppercase tracking-wider text-xs md:text-sm">
+                                        <CalendarIcon className="w-4 h-4 shrink-0" />
                                         <span>
                                             {normalizeDate(match.date).toLocaleDateString("it-IT", {
                                                 day: "2-digit",
@@ -99,7 +99,7 @@ export default function Calendario() {
                                                 year: "numeric"
                                             })}
                                         </span>
-                                        <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full border ml-2 ${
+                                        <span className={`text-[9px] md:text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full border ml-2 shrink-0 ${
                                             match.isHome !== false
                                                 ? "bg-blue-500/10 text-blue-400 border-blue-500/20"
                                                 : "bg-orange-500/10 text-orange-400 border-orange-500/20"
@@ -107,11 +107,18 @@ export default function Calendario() {
                                             {match.isHome !== false ? "Casa" : "Trasferta"}
                                         </span>
                                     </div>
-                                    <h3 className="text-2xl font-heading font-bold text-white uppercase tracking-wide">
-                                        {match.isHome !== false ? "Glass Cannons" : match.opponent}
-                                        <span className="mx-3 text-gray-600">VS</span>
-                                        {match.isHome !== false ? match.opponent : "Glass Cannons"}
-                                    </h3>
+                                    
+                                    <div className="flex items-center justify-center md:justify-start gap-2 md:gap-4 w-full">
+                                        <div className="font-heading font-bold text-white text-right flex-1 text-lg md:text-2xl uppercase tracking-wide leading-tight break-words">
+                                            {match.isHome !== false ? "Glass Cannons" : match.opponent}
+                                        </div>
+
+                                        <div className="text-gray-600 font-heading font-black text-lg md:text-xl shrink-0 px-2">VS</div>
+
+                                        <div className="font-heading font-bold text-gray-400 text-left flex-1 text-lg md:text-2xl uppercase tracking-wide leading-tight break-words">
+                                            {match.isHome !== false ? match.opponent : "Glass Cannons"}
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div className="flex flex-col items-center md:items-end space-y-2 text-gray-400 text-sm relative z-10">
