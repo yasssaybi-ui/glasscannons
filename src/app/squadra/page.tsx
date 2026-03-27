@@ -17,7 +17,16 @@ type Player = {
     role: string;
     image: string;
     personal: { age: number; height: string };
-    stats: { goals: number; assists: number; appearances: number; yellowCards: number; redCards: number };
+    stats: { 
+        goals: number; 
+        assists: number; 
+        appearances: number; 
+        yellowCards: number; 
+        redCards: number;
+        saves?: number;
+        goalsConceded?: number;
+        cleanSheets?: number;
+    };
 };
 
 export default function Squadra() {
@@ -60,6 +69,7 @@ export default function Squadra() {
     }, {} as Record<string, Player[]>);
 
     return (
+        <>
         <LiveEditor pageId="squadra">
             <div className="min-h-screen bg-black py-16 pt-28">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -171,6 +181,7 @@ export default function Squadra() {
             </div>
         </div>
 
+        </LiveEditor>
         {/* Player Stats Modal */}
         {selectedPlayer && (
             <PlayerStatsModal
@@ -178,6 +189,6 @@ export default function Squadra() {
                 onClose={() => setSelectedPlayer(null)}
             />
         )}
-        </LiveEditor>
+        </>
     );
 }

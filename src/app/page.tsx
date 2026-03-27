@@ -475,15 +475,92 @@ function HomeBlocksContent() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
-                  className="relative aspect-square md:aspect-[4/3] lg:aspect-auto lg:h-[600px] rounded-sm overflow-hidden border border-white/5"
+                  className="relative aspect-square md:aspect-[4/3] lg:aspect-auto lg:h-[600px] rounded-sm overflow-hidden border border-white/5 group flex justify-center items-center"
                 >
-                  <div className="absolute inset-0 bg-[#ff5a00]/20 mix-blend-overlay z-10" />
-                  {/* Image could also be editable if we implement an Asset Picker */}
-                  <img
-                    src="/team-photo.png"
-                    alt="Glass Cannons Team"
-                    className="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 hover:scale-105 transition-all duration-700"
-                  />
+                  <div className="absolute inset-0 bg-[#ff5a00]/20 mix-blend-overlay z-10 pointer-events-none" />
+                  
+                  {block.imageUrl || block.historyImage ? (
+                    <>
+                      <img
+                        src={block.imageUrl || block.historyImage || "/team-photo.png"}
+                        alt="Glass Cannons Team"
+                        className="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 hover:scale-105 transition-all duration-700"
+                      />
+                      {isEditMode && (
+                        <button 
+                          onClick={() => updateBlock(block.id, { imageUrl: "", historyImage: "" })} 
+                          className="absolute top-4 right-4 bg-red-500/80 hover:bg-red-500 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all z-20 cursor-pointer"
+                        >
+                          <X className="w-5 h-5" />
+                        </button>
+                      )}
+                    </>
+                  ) : (
+                    <div className="flex flex-col items-center justify-center p-8 text-center w-full z-20 relative">
+                      <Camera className="w-12 h-12 text-[#ff5a00]/30 mb-4" />
+                      <p className="text-gray-500 font-bold uppercase tracking-widest text-sm mb-6">Immagine della Squadra</p>
+                      
+                      {isEditMode && (
+                        <div className="w-full max-w-sm space-y-6">
+                          {/* URL Input */}
+                          <div className="space-y-2">
+                            <label className="text-[10px] text-[#ff5a00] font-bold uppercase tracking-widest block text-left">Incolla URL Immagine</label>
+                            <div className="flex gap-2">
+                              <input 
+                                type="text"
+                                placeholder="https://esempio.it/foto.jpg"
+                                className="flex-1 bg-black/60 border border-white/10 rounded px-3 py-2 text-white text-xs outline-none focus:border-[#ff5a00] transition-colors"
+                                onKeyDown={(e) => {
+                                  if (e.key === 'Enter') {
+                                    updateBlock(block.id, { imageUrl: (e.target as HTMLInputElement).value });
+                                  }
+                                }}
+                                onBlur={(e) => {
+                                  if (e.target.value) {
+                                    updateBlock(block.id, { imageUrl: e.target.value });
+                                  }
+                                }}
+                              />
+                            </div>
+                          </div>
+
+                          <div className="flex items-center gap-4">
+                            <div className="h-[1px] bg-white/5 flex-1" />
+                            <span className="text-[8px] text-gray-500 uppercase font-bold tracking-widest">Oppure</span>
+                            <div className="h-[1px] bg-white/5 flex-1" />
+                          </div>
+                          
+                          {/* File Upload */}
+                          <label className="cursor-pointer bg-white/5 hover:bg-white/10 border border-white/10 text-white px-6 py-3 rounded font-bold uppercase tracking-widest text-[10px] transition-all block text-center">
+                            Scegli file da PC
+                            <input 
+                              type="file" 
+                              className="hidden" 
+                              accept="image/*" 
+                              onChange={async (e) => {
+                                if (!e.target.files?.[0]) return;
+                                const file = e.target.files[0];
+                                const storageRef = ref(storage, `cms_images/${Date.now()}_${file.name}`);
+                                try {
+                                  const snapshot = await uploadBytes(storageRef, file);
+                                  const url = await getDownloadURL(snapshot.ref);
+                                  updateBlock(block.id, { imageUrl: url });
+                                } catch (err) { console.error(err); }
+                              }} 
+                            />
+                          </label>
+                        </div>
+                      )}
+                      
+                      {!isEditMode && (
+                        <img
+                          src="/team-photo.png"
+                          alt="Glass Cannons Team Default"
+                          className="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 transition-all duration-700"
+                        />
+                      )}
+                    </div>
+                  )}
                 </motion.div>
               </div>
             </div>

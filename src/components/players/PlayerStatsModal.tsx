@@ -167,7 +167,7 @@ export default function PlayerStatsModal({ player, onClose }: PlayerStatsModalPr
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-[60] flex items-center justify-center p-3 md:p-6 bg-black/95 backdrop-blur-md"
+        className="fixed inset-0 z-[9999] flex items-center justify-center p-3 md:p-6 bg-black/95 backdrop-blur-md"
         onClick={onClose}
       >
         <motion.div
@@ -185,12 +185,12 @@ export default function PlayerStatsModal({ player, onClose }: PlayerStatsModalPr
             </div>
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors bg-white/5 rounded-full p-2 hover:bg-[#ff5a00]/20 hover:border-[#ff5a00]/30 border border-white/5 z-10"
+              className="absolute top-2 right-2 md:top-4 md:right-4 text-gray-500 hover:text-white transition-all bg-white/5 rounded-full w-12 h-12 flex items-center justify-center hover:bg-[#ff5a00]/30 hover:border-[#ff5a00]/50 border border-white/10 z-[30] cursor-pointer shadow-lg active:scale-95"
             >
-              <X className="w-5 h-5" />
+              <X className="w-6 h-6" />
             </button>
 
-            <div className="flex items-center gap-5 relative z-10">
+            <div className="flex items-center gap-5 relative z-10 pr-14">
               {/* Avatar */}
               <div className="relative shrink-0">
                 <div className="w-20 h-20 md:w-24 md:h-24 rounded-xl overflow-hidden border-2 border-[#ff5a00]/50 bg-[#111]">
