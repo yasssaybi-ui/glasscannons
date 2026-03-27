@@ -103,7 +103,7 @@ export default function ArticlePage() {
                             </span>
                         </div>
 
-                        <h1 className="text-white font-heading text-4xl md:text-7xl font-black uppercase italic leading-[0.9] tracking-tighter">
+                        <h1 className="text-white font-heading text-3xl sm:text-4xl md:text-7xl font-black uppercase italic leading-[1.1] md:leading-[0.9] tracking-tighter break-words">
                             {article.title}
                         </h1>
                     </motion.div>

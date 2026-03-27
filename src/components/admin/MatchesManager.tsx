@@ -312,8 +312,8 @@ export default function MatchesManager() {
                         <p className="text-gray-500 mb-6">Non hai ancora aggiunto partite al calendario.</p>
                     </div>
                 ) : (
-                    <div className="bg-[#0f0f0f] border border-white/10 rounded-lg overflow-hidden">
-                        <table className="w-full text-left border-collapse">
+                    <div className="bg-[#0f0f0f] border border-white/10 rounded-lg overflow-x-auto">
+                        <table className="w-full text-left border-collapse min-w-[700px]">
                             <thead>
                                 <tr className="bg-black border-b border-white/10 text-gray-500 font-heading text-xs uppercase tracking-wider">
                                     <th className="p-4">Data</th>
@@ -426,7 +426,7 @@ export default function MatchesManager() {
                             <div className="flex-1 overflow-y-auto p-6">
                                 {activeTab === 'info' && (
                                     <div className="space-y-6">
-                                        <div className="grid grid-cols-2 gap-4">
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             <div>
                                                 <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Data Partita</label>
                                                 <input type="date" name="date" value={formData.date} onChange={handleInputChange} required className="w-full bg-black border border-white/10 rounded p-2 text-white focus:border-[#ff5a00] outline-none" />
@@ -441,7 +441,7 @@ export default function MatchesManager() {
                                             <input type="text" name="opponent" value={formData.opponent} onChange={handleInputChange} required className="w-full bg-black border border-white/10 rounded p-2 text-white focus:border-[#ff5a00] outline-none" placeholder="Es: Real Madrid" />
                                         </div>
 
-                                        <div className="grid grid-cols-2 gap-4">
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             <div>
                                                 <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Tipo Partita</label>
                                                 <select name="matchType" value={formData.matchType} onChange={handleInputChange} className="w-full bg-black border border-white/10 rounded p-2 text-white focus:border-[#ff5a00] outline-none font-bold uppercase tracking-wide">
@@ -459,7 +459,7 @@ export default function MatchesManager() {
                                         {/* Home/Away Toggle */}
                                         <div>
                                             <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Campo di Gioco</label>
-                                            <div className="grid grid-cols-2 gap-3">
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                                 <button
                                                     type="button"
                                                     onClick={() => setFormData(prev => ({ ...prev, isHome: true }))}
@@ -492,7 +492,7 @@ export default function MatchesManager() {
 
                                         {formData.isPlayed && (
                                             <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} className="space-y-6">
-                                                <div className="grid grid-cols-2 gap-4 bg-[#ff5a00]/10 border border-[#ff5a00]/20 p-4 rounded-lg">
+                                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-[#ff5a00]/10 border border-[#ff5a00]/20 p-4 rounded-lg">
                                                     <div>
                                                         <label className="block text-xs font-bold text-[#ff5a00] uppercase tracking-widest mb-1 text-center">Gol Glass Cannons</label>
                                                         <input type="number" name="we" value={formData.we} onChange={handleInputChange} className="w-full bg-black border border-white/10 rounded p-4 text-center text-2xl font-heading text-white focus:border-[#ff5a00] outline-none" />

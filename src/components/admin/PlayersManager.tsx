@@ -285,8 +285,8 @@ export default function PlayersManager() {
                         </button>
                     </div>
                 ) : (
-                    <div className="bg-[#0f0f0f] border border-white/10 rounded-lg overflow-hidden">
-                        <table className="w-full text-left border-collapse">
+                    <div className="bg-[#0f0f0f] border border-white/10 rounded-lg overflow-x-auto">
+                        <table className="w-full text-left border-collapse min-w-[600px]">
                             <thead>
                                 <tr className="bg-black border-b border-white/10 text-gray-500 font-heading text-xs uppercase tracking-wider">
                                     <th className="p-4 w-16 text-center">N°</th>
@@ -360,7 +360,7 @@ export default function PlayersManager() {
                                             <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Nome Completo</label>
                                             <input type="text" name="name" value={formData.name} onChange={handleInputChange} required className="w-full bg-black border border-white/10 rounded p-2 text-white placeholder-gray-600 focus:border-[#ff5a00] focus:ring-1 focus:ring-[#ff5a00] outline-none transition-colors" placeholder="Es: Mario Rossi" />
                                         </div>
-                                        <div className="grid grid-cols-2 gap-4">
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             <div>
                                                 <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Numero Maglia</label>
                                                 <input type="number" name="number" value={formData.number} onChange={handleInputChange} required className="w-full bg-black border border-white/10 rounded p-2 text-white focus:border-[#ff5a00] focus:ring-1 focus:ring-[#ff5a00] outline-none transition-colors" />
@@ -380,7 +380,7 @@ export default function PlayersManager() {
                                             <input type="url" name="image" value={formData.image} onChange={handleInputChange} required className="w-full bg-black border border-white/10 rounded p-2 text-white placeholder-gray-600 focus:border-[#ff5a00] focus:ring-1 focus:ring-[#ff5a00] outline-none transition-colors" placeholder="https://..." />
                                             <p className="text-[10px] text-gray-500 mt-1 uppercase tracking-wider">Incolla qui il link di un'immagine da internet</p>
                                         </div>
-                                        <div className="grid grid-cols-2 gap-4">
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             <div>
                                                 <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Età</label>
                                                 <input type="number" name="age" value={formData.age} onChange={handleInputChange} className="w-full bg-black border border-white/10 rounded p-2 text-white focus:border-[#ff5a00] outline-none transition-colors" />
@@ -432,7 +432,7 @@ export default function PlayersManager() {
                                             </div>
                                         )}
 
-                                        <div className="grid grid-cols-2 gap-4">
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             <div>
                                                 <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-1 flex items-center justify-center"><div className="w-2 h-3 bg-yellow-500 mr-1 rounded-sm" />Gialli</label>
                                                 <input type="number" name="yellowCards" value={formData.yellowCards} onChange={handleInputChange} className="w-full bg-black border border-white/10 rounded p-2 text-white text-center focus:border-[#ff5a00] outline-none transition-colors" />

@@ -694,7 +694,7 @@ function HomeBlocksContent() {
           <section key={block.id} className={`relative flex flex-col justify-center items-center text-center px-4 ${configClasses} min-h-[50vh]`}>
             <div className="max-w-4xl mx-auto z-10">
               {block.config?.showTitle !== false && (
-                <Editable as="h1" blockId={block.id} field="title" initialValue={block.title || "Titolo Principale"} className={`font-heading font-black uppercase tracking-wider mb-6 leading-tight ${block.config?.fontSize === 'xl' ? 'text-6xl md:text-8xl' : block.config?.fontSize === 'large' ? 'text-5xl md:text-7xl' : 'text-4xl md:text-6xl'}`} />
+                <Editable as="h1" blockId={block.id} field="title" initialValue={block.title || "Titolo Principale"} className={`font-heading font-black uppercase tracking-wider mb-6 leading-tight ${block.config?.fontSize === 'xl' ? 'text-4xl sm:text-6xl md:text-8xl' : block.config?.fontSize === 'large' ? 'text-3xl sm:text-5xl md:text-7xl' : 'text-2xl sm:text-4xl md:text-6xl'}`} />
               )}
               {block.config?.showSubtitle !== false && (
                 <Editable as="p" blockId={block.id} field="subtitle" initialValue={block.subtitle || "Sottotitolo descrittivo..."} className={`mb-8 opacity-80 ${getFontSizeClass(block.config?.fontSize)}`} />

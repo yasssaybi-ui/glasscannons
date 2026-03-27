@@ -248,16 +248,16 @@ export default function MatchDetailsModal({ matchId, onClose }: MatchDetailsModa
                                     {match.isHome !== false ? "Casa" : "Trasferta"}
                                 </span>
                             </div>
-                            <div className="flex items-center justify-center space-x-6 w-full">
+                            <div className="flex items-center justify-center space-x-2 sm:space-x-6 w-full">
                                 {/* Left team = home team */}
-                                <div className="text-right flex-1">
-                                    <h2 className="font-heading text-xl md:text-3xl lg:text-4xl text-white uppercase truncate">
+                                <div className="text-right flex-1 min-w-0">
+                                    <h2 className="font-heading text-sm sm:text-xl md:text-3xl lg:text-4xl text-white uppercase leading-tight break-words">
                                         {match.isHome !== false ? "Glass Cannons" : match.opponent}
                                     </h2>
-                                    <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-1">Casa</p>
+                                    <p className="text-[8px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-1">Casa</p>
                                 </div>
-                                <div className="bg-black/80 px-4 md:px-6 py-2 md:py-3 rounded-xl border border-white/10 shadow-lg shadow-[#ff5a00]/10 shrink-0">
-                                    <span className="font-heading text-3xl md:text-5xl font-bold bg-gradient-to-br from-white to-gray-400 text-transparent bg-clip-text">
+                                <div className="bg-black/80 px-3 sm:px-4 md:px-6 py-2 md:py-3 rounded-xl border border-white/10 shadow-lg shadow-[#ff5a00]/10 shrink-0 mx-2">
+                                    <span className="font-heading text-2xl sm:text-3xl md:text-5xl font-bold bg-gradient-to-br from-white to-gray-400 text-transparent bg-clip-text whitespace-nowrap">
                                         {match.isPlayed
                                             ? match.isHome !== false
                                                 ? `${match.we} - ${match.they}`
@@ -266,11 +266,11 @@ export default function MatchDetailsModal({ matchId, onClose }: MatchDetailsModa
                                     </span>
                                 </div>
                                 {/* Right team = away team */}
-                                <div className="text-left flex-1">
-                                    <h2 className="font-heading text-xl md:text-3xl lg:text-4xl text-white uppercase truncate">
+                                <div className="text-left flex-1 min-w-0">
+                                    <h2 className="font-heading text-sm sm:text-xl md:text-3xl lg:text-4xl text-white uppercase leading-tight break-words">
                                         {match.isHome !== false ? match.opponent : "Glass Cannons"}
                                     </h2>
-                                    <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-1">Trasferta</p>
+                                    <p className="text-[8px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-1">Trasferta</p>
                                 </div>
                             </div>
                         </div>
@@ -280,21 +280,21 @@ export default function MatchDetailsModal({ matchId, onClose }: MatchDetailsModa
                     <div className="flex border-b border-white/10 shrink-0 bg-black/40">
                         <button
                             onClick={() => setActiveTab('formazione')}
-                            className={`flex-1 py-4 font-bold uppercase tracking-widest text-xs flex items-center justify-center transition-all ${activeTab === 'formazione' ? 'text-[#ff5a00] bg-white/5 border-b-2 border-[#ff5a00]' : 'text-gray-500 hover:text-gray-300 hover:bg-white/5'}`}
+                            className={`flex-1 py-3 md:py-4 font-bold uppercase tracking-wider md:tracking-widest text-[10px] md:text-xs flex flex-col md:flex-row items-center justify-center transition-all ${activeTab === 'formazione' ? 'text-[#ff5a00] bg-white/5 border-b-2 border-[#ff5a00]' : 'text-gray-500 hover:text-gray-300 hover:bg-white/5'}`}
                         >
-                            <Shield className="w-4 h-4 mr-2" /> Formazione
+                            <Shield className="w-4 h-4 mb-1 md:mb-0 md:mr-2" /> <span>Formazione</span>
                         </button>
                         <button
                             onClick={() => setActiveTab('statistiche')}
-                            className={`flex-1 py-4 font-bold uppercase tracking-widest text-xs flex items-center justify-center transition-all ${activeTab === 'statistiche' ? 'text-[#ff5a00] bg-white/5 border-b-2 border-[#ff5a00]' : 'text-gray-500 hover:text-gray-300 hover:bg-white/5'}`}
+                            className={`flex-1 py-3 md:py-4 font-bold uppercase tracking-wider md:tracking-widest text-[10px] md:text-xs flex flex-col md:flex-row items-center justify-center transition-all ${activeTab === 'statistiche' ? 'text-[#ff5a00] bg-white/5 border-b-2 border-[#ff5a00]' : 'text-gray-500 hover:text-gray-300 hover:bg-white/5'}`}
                         >
-                            <Activity className="w-4 h-4 mr-2" /> Statistiche
+                            <Activity className="w-4 h-4 mb-1 md:mb-0 md:mr-2" /> <span>Statistiche</span>
                         </button>
                         <button
                             onClick={() => setActiveTab('mvp')}
-                            className={`flex-1 py-4 font-bold uppercase tracking-widest text-xs flex items-center justify-center transition-all ${activeTab === 'mvp' ? 'text-[#ff5a00] bg-white/5 border-b-2 border-[#ff5a00]' : 'text-gray-500 hover:text-gray-300 hover:bg-white/5'}`}
+                            className={`flex-1 py-3 md:py-4 font-bold uppercase tracking-wider md:tracking-widest text-[10px] md:text-xs flex flex-col md:flex-row items-center justify-center transition-all ${activeTab === 'mvp' ? 'text-[#ff5a00] bg-white/5 border-b-2 border-[#ff5a00]' : 'text-gray-500 hover:text-gray-300 hover:bg-white/5'}`}
                         >
-                            <Star className="w-4 h-4 mr-2" /> MVP
+                            <Star className="w-4 h-4 mb-1 md:mb-0 md:mr-2" /> <span>MVP</span>
                         </button>
                     </div>
 

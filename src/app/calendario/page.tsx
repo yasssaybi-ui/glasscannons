@@ -61,7 +61,7 @@ export default function Calendario() {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center mb-16"
                 >
-                    <h1 className="font-heading text-5xl md:text-7xl font-bold uppercase text-white tracking-widest mb-4 flex justify-center gap-4">
+                    <h1 className="font-heading text-3xl sm:text-5xl md:text-7xl font-bold uppercase text-white tracking-widest mb-4 flex flex-wrap justify-center gap-2 sm:gap-4">
                         <Editable as="span" blockId="calendario_header" field="title1" initialValue="Il" />
                         <Editable as="span" blockId="calendario_header" field="title2" initialValue="Calendario" className="text-[#ff5a00]" />
                     </h1>

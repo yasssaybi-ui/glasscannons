@@ -86,8 +86,8 @@ export default function StandingsPreview() {
                     <h2 className="font-heading text-4xl font-bold uppercase text-white tracking-widest">Anteprima Classifica</h2>
                 </header>
 
-                <div className="bg-[#0f0f0f] border border-white/10 rounded-xl overflow-hidden shadow-2xl">
-                    <table className="w-full text-left border-collapse">
+                <div className="bg-[#0f0f0f] border border-white/10 rounded-xl overflow-x-auto shadow-2xl">
+                    <table className="w-full text-left border-collapse min-w-[500px]">
                         <thead>
                             <tr className="bg-black border-b border-white/10 text-gray-500 font-heading text-xs uppercase tracking-widest">
                                 <th className="p-6 w-16 text-center">#</th>

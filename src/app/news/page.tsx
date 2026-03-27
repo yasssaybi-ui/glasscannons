@@ -24,7 +24,7 @@ export default function NewsPage() {
                         className="space-y-4"
                     >
                         <Editable as="span" blockId="news_header" field="subtitle" initialValue="Glass Cannons News" className="text-[#ff5a00] font-bold uppercase tracking-[0.5em] text-[10px] md:text-sm" />
-                        <h1 className="text-white font-heading text-5xl md:text-8xl font-black uppercase tracking-tighter italic whitespace-nowrap flex justify-center gap-4">
+                        <h1 className="text-white font-heading text-3xl sm:text-4xl sm:text-5xl md:text-8xl font-black uppercase tracking-tighter italic flex flex-wrap justify-center gap-2 sm:gap-4 break-words text-center">
                             <Editable as="span" blockId="news_header" field="title1" initialValue="Ultime" />
                             <Editable as="span" blockId="news_header" field="title2" initialValue="Notizie" className="text-[#ff5a00]" />
                         </h1>

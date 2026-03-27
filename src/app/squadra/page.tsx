@@ -74,7 +74,7 @@ export default function Squadra() {
             <div className="min-h-screen bg-black py-16 pt-28">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <h1 className="font-heading text-5xl md:text-7xl font-bold uppercase text-white tracking-widest mb-4 flex justify-center gap-4">
+                    <h1 className="font-heading text-3xl sm:text-5xl md:text-7xl font-bold uppercase text-white tracking-widest mb-4 flex flex-wrap justify-center gap-2 sm:gap-4">
                         <Editable as="span" blockId="squadra_header" field="title1" initialValue="La" />
                         <Editable as="span" blockId="squadra_header" field="title2" initialValue="Rosa" className="text-[#ff5a00]" />
                     </h1>

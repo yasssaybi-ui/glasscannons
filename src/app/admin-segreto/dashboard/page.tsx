@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { Users, Calendar, Trophy, Camera, LogOut, LayoutTemplate, Newspaper } from "lucide-react";
+import { Users, Calendar, Trophy, Camera, LogOut, LayoutTemplate, Newspaper, Menu, X } from "lucide-react";
 import { auth } from "@/lib/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 
@@ -16,6 +16,7 @@ export default function AdminDashboard() {
     const router = useRouter();
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [activeTab, setActiveTab] = useState("La Rosa");
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -45,9 +46,28 @@ export default function AdminDashboard() {
 
     return (
         <div className="flex h-screen bg-black overflow-hidden relative z-50">
+            {/* Mobile Header */}
+            <div className="md:hidden flex items-center justify-between p-4 bg-[#0a0a0a] border-b border-white/10 absolute top-0 left-0 right-0 z-50">
+                <div className="flex items-center space-x-2">
+                    <img src="/logo.png" alt="Glass Cannons Logo" className="w-8 h-8 object-contain" />
+                    <span className="font-heading font-bold uppercase tracking-widest text-white text-xs">Admin Panel</span>
+                </div>
+                <button onClick={() => setIsSidebarOpen(!isSidebarOpen)} className="text-white p-2 bg-white/5 rounded hover:bg-white/10 transition-colors">
+                    {isSidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                </button>
+            </div>
+
+            {/* Sidebar Overlay */}
+            {isSidebarOpen && (
+                <div 
+                    className="md:hidden fixed inset-0 bg-black/80 z-40 backdrop-blur-sm"
+                    onClick={() => setIsSidebarOpen(false)}
+                />
+            )}
+
             {/* Sidebar */}
-            <div className="w-64 bg-[#0a0a0a] border-r border-white/10 flex flex-col">
-                <div className="p-6 flex items-center space-x-3 border-b border-white/10 mb-4">
+            <div className={`fixed inset-y-0 left-0 transform ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} md:relative md:translate-x-0 transition duration-200 ease-in-out z-50 w-64 bg-[#0a0a0a] border-r border-white/10 flex flex-col pt-16 md:pt-0`}>
+                <div className="hidden md:flex p-6 items-center space-x-3 border-b border-white/10 mb-4">
                     <img src="/logo.png" alt="Glass Cannons Logo" className="w-10 h-10 object-contain" />
                     <span className="font-heading text-lg font-bold uppercase tracking-widest text-white leading-tight">
                         Admin <br /><span className="text-[#ff5a00]">Panel</span>
@@ -58,7 +78,7 @@ export default function AdminDashboard() {
                     {tabs.map((tab) => (
                         <button
                             key={tab.name}
-                            onClick={() => setActiveTab(tab.name)}
+                            onClick={() => { setActiveTab(tab.name); setIsSidebarOpen(false); }}
                             className={`w-full flex items-center space-x-4 px-4 py-3 rounded-lg transition-all duration-200 cursor-pointer ${activeTab === tab.name
                                 ? "bg-[#ff5a00] text-white shadow-[0_0_20px_rgba(255,90,0,0.3)]"
                                 : "text-gray-400 hover:bg-white/5 hover:text-white"
@@ -86,7 +106,7 @@ export default function AdminDashboard() {
             </div>
 
             {/* Main Content Area */}
-            <div className="flex-1 flex flex-col h-full relative overflow-hidden bg-[#000]">
+            <div className="flex-1 flex flex-col h-full relative overflow-x-hidden overflow-y-auto bg-[#000] pt-16 md:pt-0">
                 {activeTab === "La Rosa" && <PlayersManager />}
                 {activeTab === "Partite" && <MatchesManager />}
                 {activeTab === "News" && <NewsManager />}
