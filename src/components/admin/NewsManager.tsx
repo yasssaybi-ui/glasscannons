@@ -307,18 +307,18 @@ export default function NewsManager() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 bg-black/90 backdrop-blur-xl z-[100] flex items-center justify-center p-4 overflow-y-auto"
+                        className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-start justify-center p-4 overflow-y-auto py-8 sm:py-20"
                     >
                         <motion.div
                             initial={{ scale: 0.95, opacity: 0, y: 20 }}
                             animate={{ scale: 1, opacity: 1, y: 0 }}
                             exit={{ scale: 0.95, opacity: 0, y: 20 }}
-                            className="bg-[#0f0f0f] border border-white/10 rounded-2xl shadow-2xl w-full max-w-[calc(100vw-2rem)] md:max-w-5xl p-4 sm:p-8 my-4 sm:my-8 relative overflow-hidden flex flex-col"
+                            className="bg-[#0f0f0f] border border-white/10 rounded-2xl shadow-2xl w-full max-w-[calc(100vw-2rem)] md:max-w-5xl p-4 sm:p-8 flex flex-col max-h-[85vh] sm:max-h-none relative overflow-hidden"
                         >
                             <div className="absolute top-0 left-0 w-full h-1 bg-[#ff5a00]" />
                             
                             <div className="flex justify-between items-center mb-6 sm:mb-8 shrink-0">
-                                <div className="space-y-1">
+                                <div className="space-y-8 overflow-y-auto flex-1 pr-2 custom-scrollbar p-1">
                                     <h3 className="font-heading text-xl sm:text-3xl font-black uppercase text-white tracking-wider sm:tracking-widest leading-tight">
                                         {editingId ? "Modifica Articolo" : "Nuovo Articolo"}
                                     </h3>

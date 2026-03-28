@@ -334,13 +334,13 @@ export default function PlayersManager() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto"
+                        className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-start justify-center p-4 overflow-y-auto py-8 sm:py-20"
                     >
                         <motion.div
                             initial={{ scale: 0.95, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.95, opacity: 0 }}
-                            className="bg-[#0f0f0f] border border-white/10 rounded-lg shadow-2xl w-full max-w-[calc(100vw-2rem)] md:max-w-4xl p-4 sm:p-6 md:p-8 my-4 sm:my-8 flex flex-col overflow-hidden"
+                            className="bg-[#0f0f0f] border border-white/10 rounded-lg shadow-2xl w-full max-w-[calc(100vw-2rem)] md:max-w-4xl p-4 sm:p-6 md:p-8 flex flex-col max-h-[85vh] sm:max-h-none overflow-hidden"
                         >
                             <div className="flex justify-between items-center mb-4 sm:mb-6 border-b border-white/10 pb-4 shrink-0">
                                 <h3 className="font-heading text-xl sm:text-2xl font-bold uppercase text-white tracking-wider sm:tracking-widest">
@@ -351,7 +351,7 @@ export default function PlayersManager() {
                                 </button>
                             </div>
 
-                            <form onSubmit={handleSubmit} className="space-y-6">
+                            <form onSubmit={handleSubmit} className="space-y-6 overflow-y-auto flex-1 pr-2 custom-scrollbar">
                                 {/* Basic Info */}
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="space-y-4">

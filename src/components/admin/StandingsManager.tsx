@@ -243,11 +243,12 @@ export default function StandingsManager() {
                 {isModalOpen && (
                     <motion.div
                         initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-                        className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+                        className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-start justify-center p-4 overflow-y-auto py-8 sm:py-20"
+                        onClick={handleClose}
                     >
                         <motion.div
                             initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }}
-                            className="bg-[#0f0f0f] border border-white/10 rounded-lg shadow-2xl w-full max-w-[calc(100vw-2rem)] md:max-w-xl p-4 md:p-8 flex flex-col overflow-hidden"
+                            className="bg-[#0f0f0f] border border-white/10 rounded-lg shadow-2xl w-full max-w-[calc(100vw-2rem)] md:max-w-xl p-4 md:p-8 flex flex-col max-h-[85vh] sm:max-h-none overflow-hidden"
                         >
                             <div className="flex justify-between items-center mb-4 sm:mb-6 border-b border-white/10 pb-4 shrink-0">
                                 <h3 className="font-heading text-lg sm:text-xl font-bold uppercase text-white tracking-wider sm:tracking-widest">
@@ -258,7 +259,7 @@ export default function StandingsManager() {
                                 </button>
                             </div>
 
-                            <form onSubmit={handleSubmit} className="space-y-5">
+                            <form onSubmit={handleSubmit} className="space-y-4 overflow-y-auto flex-1 pr-2 custom-scrollbar p-1">
                                 {/* Team Name */}
                                 <div>
                                     <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Nome Squadra</label>

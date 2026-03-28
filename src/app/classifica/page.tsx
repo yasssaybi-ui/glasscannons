@@ -114,12 +114,12 @@ export default function Classifica() {
                                         <th className="p-2 sm:p-4 w-12 text-center">#</th>
                                         <th className="p-2 sm:p-4">Squadra</th>
                                         <th className="p-2 sm:p-4 text-center">Pt</th>
-                                        <th className="p-2 sm:p-4 text-center hidden sm:table-cell">G</th>
-                                        <th className="p-2 sm:p-4 text-center hidden sm:table-cell">V</th>
-                                        <th className="p-2 sm:p-4 text-center hidden sm:table-cell">N</th>
-                                        <th className="p-2 sm:p-4 text-center hidden sm:table-cell">P</th>
-                                        <th className="p-2 sm:p-4 text-center hidden md:table-cell">GF</th>
-                                        <th className="p-2 sm:p-4 text-center hidden md:table-cell">GS</th>
+                                        <th className="p-2 sm:p-4 text-center">G</th>
+                                        <th className="p-2 sm:p-4 text-center">V</th>
+                                        <th className="p-2 sm:p-4 text-center">N</th>
+                                        <th className="p-2 sm:p-4 text-center">P</th>
+                                        <th className="p-2 sm:p-4 text-center">GF</th>
+                                        <th className="p-2 sm:p-4 text-center">GS</th>
                                         <th className="p-2 sm:p-4 text-center">DR</th>
                                     </tr>
                                 </thead>
@@ -141,12 +141,12 @@ export default function Classifica() {
                                             <td className={`p-2 sm:p-4 text-center font-bold text-base sm:text-lg ${row.team === "Glass Cannons" ? "text-[#ff5a00]" : "text-white"}`}>
                                                 {row.pts}
                                             </td>
-                                            <td className="p-2 sm:p-4 text-center text-gray-500 hidden sm:table-cell">{row.p}</td>
-                                            <td className="p-2 sm:p-4 text-center text-gray-500 hidden sm:table-cell">{row.w}</td>
-                                            <td className="p-2 sm:p-4 text-center text-gray-500 hidden sm:table-cell">{row.d}</td>
-                                            <td className="p-2 sm:p-4 text-center text-gray-500 hidden sm:table-cell">{row.l}</td>
-                                            <td className="p-2 sm:p-4 text-center text-gray-500 hidden md:table-cell">{row.gf}</td>
-                                            <td className="p-2 sm:p-4 text-center text-gray-500 hidden md:table-cell">{row.ga}</td>
+                                            <td className="p-2 sm:p-4 text-center text-gray-500">{row.p}</td>
+                                            <td className="p-2 sm:p-4 text-center text-gray-500">{row.w}</td>
+                                            <td className="p-2 sm:p-4 text-center text-gray-500">{row.d}</td>
+                                            <td className="p-2 sm:p-4 text-center text-gray-500">{row.l}</td>
+                                            <td className="p-2 sm:p-4 text-center text-gray-500">{row.gf}</td>
+                                            <td className="p-2 sm:p-4 text-center text-gray-500">{row.ga}</td>
                                             <td className="p-2 sm:p-4 text-center text-gray-500 text-sm sm:text-base">{row.gd > 0 ? `+${row.gd}` : row.gd}</td>
                                         </motion.tr>
                                     ))}

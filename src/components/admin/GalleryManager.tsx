@@ -165,13 +165,13 @@ export default function GalleryManager() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto"
+                        className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-start justify-center p-4 overflow-y-auto py-8 sm:py-20"
                     >
                         <motion.div
                             initial={{ scale: 0.95, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.95, opacity: 0 }}
-                            className="bg-[#0f0f0f] border border-white/10 rounded-lg shadow-2xl w-full max-w-[calc(100vw-2rem)] md:max-w-lg p-4 sm:p-6 md:p-8 flex flex-col overflow-hidden"
+                            className="bg-[#0f0f0f] border border-white/10 rounded-lg shadow-2xl w-full max-w-[calc(100vw-2rem)] md:max-w-lg p-4 sm:p-6 md:p-8 flex flex-col max-h-[85vh] sm:max-h-none overflow-hidden"
                         >
                             <div className="flex justify-between items-center mb-4 sm:mb-6 border-b border-white/10 pb-4 shrink-0">
                                 <h3 className="font-heading text-xl sm:text-2xl font-bold uppercase text-white tracking-wider sm:tracking-widest">
@@ -182,7 +182,7 @@ export default function GalleryManager() {
                                 </button>
                             </div>
 
-                            <form onSubmit={handleSubmit} className="space-y-6">
+                            <form onSubmit={handleSubmit} className="space-y-4 overflow-y-auto flex-1 pr-2 custom-scrollbar">
                                 <div>
                                     <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Link Foto (URL)</label>
                                     <input type="url" name="url" value={formData.url} onChange={handleInputChange} required className="w-full bg-black border border-white/10 rounded p-2 text-white focus:border-[#ff5a00] outline-none" placeholder="https://..." />

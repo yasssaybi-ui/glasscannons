@@ -391,7 +391,7 @@ export default function MatchesManager() {
                             initial={{ scale: 0.95, opacity: 0, y: 20 }}
                             animate={{ scale: 1, opacity: 1, y: 0 }}
                             exit={{ scale: 0.95, opacity: 0, y: 20 }}
-                            className="bg-[#0f0f0f] border border-white/10 rounded-lg shadow-2xl w-full max-w-[calc(100vw-2rem)] md:max-w-4xl max-h-[90vh] flex flex-col overflow-hidden"
+                            className="bg-[#0f0f0f] border border-white/10 rounded-lg shadow-2xl w-full max-w-[calc(100vw-2rem)] md:max-w-4xl max-h-[85vh] sm:max-h-none flex flex-col overflow-hidden"
                         >
                             <div className="flex justify-between items-center p-4 sm:p-6 border-b border-white/10 shrink-0">
                                 <h3 className="font-heading text-lg sm:text-2xl font-bold uppercase text-white tracking-wider sm:tracking-widest">
@@ -423,7 +423,7 @@ export default function MatchesManager() {
                                 </button>
                             </div>
 
-                            <div className="flex-1 overflow-y-auto p-6">
+                            <div className="flex-1 overflow-y-auto custom-scrollbar p-4 sm:p-6">
                                 {activeTab === 'info' && (
                                     <div className="space-y-6">
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
