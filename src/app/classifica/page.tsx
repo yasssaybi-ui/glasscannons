@@ -108,7 +108,7 @@ export default function Classifica() {
                         className="bg-[#0f0f0f] border border-white/10 rounded-lg overflow-hidden"
                     >
                         <div className="overflow-x-auto">
-                            <table className="w-full text-left border-collapse min-w-full sm:min-w-[600px]">
+                            <table className="w-full text-left border-collapse min-w-[700px]">
                                 <thead>
                                     <tr className="bg-black border-b border-white/10 text-gray-500 font-heading text-sm uppercase tracking-wider">
                                         <th className="p-2 sm:p-4 w-12 text-center">#</th>

@@ -132,20 +132,20 @@ export default function StandingsManager() {
 
     return (
         <div className="flex-1 flex flex-col overflow-hidden relative">
-            <header className="h-20 bg-[#0a0a0a] border-b border-white/10 flex items-center px-8 justify-between shrink-0">
-                <div className="flex items-center gap-3">
-                    <Trophy className="w-6 h-6 text-[#ff5a00]" />
-                    <h2 className="font-heading text-2xl font-bold uppercase text-white tracking-widest">Gestione Classifica</h2>
+            <header className="min-h-[5rem] py-4 bg-[#0a0a0a] border-b border-white/10 flex flex-wrap items-center px-4 md:px-8 justify-between gap-4 shrink-0">
+                <div className="flex items-center gap-2 sm:gap-3">
+                    <Trophy className="w-5 h-5 sm:w-6 sm:h-6 text-[#ff5a00]" />
+                    <h2 className="font-heading text-xl sm:text-2xl font-bold uppercase text-white tracking-widest">Gestione Classifica</h2>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                     <button onClick={fetchData} disabled={loading}
-                        className="flex items-center gap-2 bg-white/5 text-gray-400 px-4 py-2 rounded text-xs font-bold uppercase tracking-wider hover:bg-white/10 hover:text-white transition-all border border-white/10">
-                        <RefreshCw className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} />
-                        Aggiorna
+                        className="flex items-center gap-1 sm:gap-2 bg-white/5 text-gray-400 px-3 py-2 sm:px-4 rounded text-[10px] sm:text-xs font-bold uppercase tracking-wider hover:bg-white/10 hover:text-white transition-all border border-white/10">
+                        <RefreshCw className={`w-3 h-3 sm:w-4 sm:h-4 ${loading ? "animate-spin" : ""}`} />
+                        <span className="hidden sm:inline">Aggiorna</span>
                     </button>
                     <button onClick={() => handleOpen()}
-                        className="bg-[#ff5a00] text-white px-4 py-2 rounded text-sm font-bold uppercase tracking-wider hover:bg-[#e04e00] transition-colors shadow-lg shadow-[#ff5a00]/20 flex items-center gap-2">
-                        <Plus className="w-4 h-4" /> Aggiungi Squadra
+                        className="bg-[#ff5a00] text-white px-3 py-2 sm:px-4 rounded text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-[#e04e00] transition-colors shadow-lg shadow-[#ff5a00]/20 flex items-center gap-1 sm:gap-2">
+                        <Plus className="w-3 h-3 sm:w-4 sm:h-4" /> Aggiungi <span className="hidden sm:inline">Squadra</span>
                     </button>
                 </div>
             </header>
@@ -247,13 +247,13 @@ export default function StandingsManager() {
                     >
                         <motion.div
                             initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }}
-                            className="bg-[#0f0f0f] border border-white/10 rounded-lg shadow-2xl w-full max-w-xl p-6 md:p-8"
+                            className="bg-[#0f0f0f] border border-white/10 rounded-lg shadow-2xl w-full max-w-[calc(100vw-2rem)] md:max-w-xl p-4 md:p-8 flex flex-col overflow-hidden"
                         >
-                            <div className="flex justify-between items-center mb-6 border-b border-white/10 pb-4">
-                                <h3 className="font-heading text-xl font-bold uppercase text-white tracking-widest">
+                            <div className="flex justify-between items-center mb-4 sm:mb-6 border-b border-white/10 pb-4 shrink-0">
+                                <h3 className="font-heading text-lg sm:text-xl font-bold uppercase text-white tracking-wider sm:tracking-widest">
                                     {editingId ? "Modifica Squadra" : "Nuova Squadra"}
                                 </h3>
-                                <button onClick={handleClose} className="text-gray-400 hover:text-white transition-colors">
+                                <button onClick={handleClose} className="text-gray-400 hover:text-white transition-colors shrink-0">
                                     <X className="w-6 h-6" />
                                 </button>
                             </div>

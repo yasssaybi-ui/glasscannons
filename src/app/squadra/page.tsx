@@ -132,7 +132,7 @@ export default function Squadra() {
 
                                             {/* Player Info */}
                                             <div className="p-4 md:p-6 flex-1 flex flex-col">
-                                                <h3 className="font-heading text-lg md:text-2xl font-bold text-white uppercase tracking-wider mb-1 group-hover:text-[#ff5a00] transition-colors truncate">{player.name}</h3>
+                                                <h3 className="font-heading text-lg md:text-2xl font-bold text-white uppercase tracking-wider mb-1 group-hover:text-[#ff5a00] transition-colors leading-tight break-words">{player.name}</h3>
                                                 <p className="text-[#ff5a00] font-bold text-xs md:text-sm uppercase tracking-widest mb-4">{player.role}</p>
 
                                                 <div className="flex text-[10px] md:text-xs text-gray-500 mb-4 md:mb-6 uppercase tracking-wider font-bold space-x-2 md:space-x-4">

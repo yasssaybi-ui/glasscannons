@@ -180,27 +180,27 @@ export default function NewsManager() {
 
     return (
         <div className="flex-1 flex flex-col overflow-hidden relative bg-[#0a0a0a]">
-            <header className="h-20 bg-[#0a0a0a] border-b border-white/10 flex items-center px-8 justify-between shrink-0">
-                <div className="flex items-center space-x-4">
-                    <Newspaper className="w-6 h-6 text-[#ff5a00]" />
-                    <h2 className="font-heading text-2xl font-bold uppercase text-white tracking-widest">Gestione News</h2>
+            <header className="min-h-[5rem] py-4 bg-[#0a0a0a] border-b border-white/10 flex flex-wrap items-center px-4 md:px-8 justify-between gap-4 shrink-0">
+                <div className="flex items-center gap-2 sm:space-x-4">
+                    <Newspaper className="w-5 h-5 sm:w-6 sm:h-6 text-[#ff5a00]" />
+                    <h2 className="font-heading text-xl sm:text-2xl font-bold uppercase text-white tracking-widest">Gestione News</h2>
                 </div>
-                <div className="flex items-center space-x-4">
-                    <div className="relative">
+                <div className="flex flex-wrap items-center gap-3 sm:space-x-4 w-full sm:w-auto">
+                    <div className="relative flex-1 sm:flex-none">
                         <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
                         <input
                             type="text"
                             placeholder="Cerca news..."
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
-                            className="bg-black border border-white/10 rounded-full pl-10 pr-4 py-2 text-sm text-white focus:border-[#ff5a00] outline-none w-64 transition-all"
+                            className="bg-black border border-white/10 rounded-full pl-10 pr-4 py-2 text-sm text-white focus:border-[#ff5a00] outline-none w-full sm:w-64 transition-all"
                         />
                     </div>
                     <button
                         onClick={() => handleOpenModal()}
-                        className="bg-[#ff5a00] text-white px-6 py-2 rounded text-sm font-bold uppercase tracking-wider hover:bg-[#e04e00] transition-colors shadow-lg shadow-[#ff5a00]/20 flex items-center space-x-2"
+                        className="bg-[#ff5a00] text-white px-4 shrink-0 sm:px-6 py-2 rounded text-[10px] sm:text-sm font-bold uppercase tracking-wider hover:bg-[#e04e00] transition-colors shadow-lg shadow-[#ff5a00]/20 flex items-center space-x-2"
                     >
-                        <span>+ Nuova News</span>
+                        <span>+ Nuova <span className="hidden sm:inline">News</span></span>
                     </button>
                 </div>
             </header>
@@ -313,13 +313,13 @@ export default function NewsManager() {
                             initial={{ scale: 0.95, opacity: 0, y: 20 }}
                             animate={{ scale: 1, opacity: 1, y: 0 }}
                             exit={{ scale: 0.95, opacity: 0, y: 20 }}
-                            className="bg-[#0f0f0f] border border-white/10 rounded-2xl shadow-2xl w-full max-w-5xl p-8 my-8 relative overflow-hidden"
+                            className="bg-[#0f0f0f] border border-white/10 rounded-2xl shadow-2xl w-full max-w-[calc(100vw-2rem)] md:max-w-5xl p-4 sm:p-8 my-4 sm:my-8 relative overflow-hidden flex flex-col"
                         >
                             <div className="absolute top-0 left-0 w-full h-1 bg-[#ff5a00]" />
                             
-                            <div className="flex justify-between items-center mb-8">
+                            <div className="flex justify-between items-center mb-6 sm:mb-8 shrink-0">
                                 <div className="space-y-1">
-                                    <h3 className="font-heading text-3xl font-black uppercase text-white tracking-widest">
+                                    <h3 className="font-heading text-xl sm:text-3xl font-black uppercase text-white tracking-wider sm:tracking-widest leading-tight">
                                         {editingId ? "Modifica Articolo" : "Nuovo Articolo"}
                                     </h3>
                                     <p className="text-[#ff5a00] text-[10px] font-bold uppercase tracking-[0.3em]">Editor News Glass Cannons</p>

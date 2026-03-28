@@ -287,16 +287,16 @@ export default function MatchesManager() {
 
     return (
         <div className="flex-1 flex flex-col overflow-hidden relative">
-            <header className="h-20 bg-[#0a0a0a] border-b border-white/10 flex items-center px-8 justify-between shrink-0">
-                <div className="flex items-center space-x-4">
-                    <Calendar className="w-6 h-6 text-[#ff5a00]" />
-                    <h2 className="font-heading text-2xl font-bold uppercase text-white tracking-widest">Gestione Partite</h2>
+            <header className="min-h-[5rem] py-4 bg-[#0a0a0a] border-b border-white/10 flex flex-wrap items-center px-4 md:px-8 justify-between gap-4 shrink-0">
+                <div className="flex items-center space-x-2 sm:space-x-4">
+                    <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-[#ff5a00]" />
+                    <h2 className="font-heading text-xl sm:text-2xl font-bold uppercase text-white tracking-widest">Gestione Partite</h2>
                 </div>
                 <button
                     onClick={() => handleOpenModal()}
-                    className="bg-[#ff5a00] text-white px-4 py-2 rounded text-sm font-bold uppercase tracking-wider hover:bg-[#e04e00] transition-colors shadow-lg shadow-[#ff5a00]/20"
+                    className="bg-[#ff5a00] text-white px-3 py-2 sm:px-4 rounded text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-[#e04e00] transition-colors shadow-lg shadow-[#ff5a00]/20"
                 >
-                    + Aggiungi Partita
+                    + Aggiungi <span className="hidden sm:inline">Partita</span>
                 </button>
             </header>
 
@@ -391,21 +391,21 @@ export default function MatchesManager() {
                             initial={{ scale: 0.95, opacity: 0, y: 20 }}
                             animate={{ scale: 1, opacity: 1, y: 0 }}
                             exit={{ scale: 0.95, opacity: 0, y: 20 }}
-                            className="bg-[#0f0f0f] border border-white/10 rounded-lg shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col"
+                            className="bg-[#0f0f0f] border border-white/10 rounded-lg shadow-2xl w-full max-w-[calc(100vw-2rem)] md:max-w-4xl max-h-[90vh] flex flex-col overflow-hidden"
                         >
-                            <div className="flex justify-between items-center p-6 border-b border-white/10 shrink-0">
-                                <h3 className="font-heading text-2xl font-bold uppercase text-white tracking-widest">
+                            <div className="flex justify-between items-center p-4 sm:p-6 border-b border-white/10 shrink-0">
+                                <h3 className="font-heading text-lg sm:text-2xl font-bold uppercase text-white tracking-wider sm:tracking-widest">
                                     {editingId ? "Dettagli Partita" : "Nuova Partita"}
                                 </h3>
-                                <button onClick={handleCloseModal} className="text-gray-400 hover:text-white transition-colors">
+                                <button onClick={handleCloseModal} className="text-gray-400 hover:text-white transition-colors shrink-0">
                                     <X className="w-6 h-6" />
                                 </button>
                             </div>
 
-                            <div className="flex border-b border-white/10 shrink-0 bg-black/30">
+                            <div className="flex border-b border-white/10 shrink-0 bg-black/30 overflow-x-auto hide-scrollbar">
                                 <button
                                     onClick={() => setActiveTab('info')}
-                                    className={`flex-1 py-4 font-bold uppercase tracking-widest text-xs flex items-center justify-center transition-colors ${activeTab === 'info' ? 'text-[#ff5a00] border-b-2 border-[#ff5a00] bg-white/5' : 'text-gray-500 hover:text-gray-300'}`}
+                                    className={`flex-1 py-4 px-4 font-bold uppercase tracking-widest text-xs flex items-center justify-center transition-colors whitespace-nowrap ${activeTab === 'info' ? 'text-[#ff5a00] border-b-2 border-[#ff5a00] bg-white/5' : 'text-gray-500 hover:text-gray-300'}`}
                                 >
                                     <Info className="w-4 h-4 mr-2" /> Info Generali
                                 </button>

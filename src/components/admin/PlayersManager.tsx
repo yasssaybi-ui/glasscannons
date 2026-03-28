@@ -246,23 +246,23 @@ export default function PlayersManager() {
 
     return (
         <div className="flex-1 flex flex-col overflow-hidden relative">
-            <header className="h-20 bg-[#0a0a0a] border-b border-white/10 flex items-center px-8 justify-between shrink-0">
-                <h2 className="font-heading text-2xl font-bold uppercase text-white tracking-widest">Gestione Rosa</h2>
-                <div className="flex items-center space-x-4">
+            <header className="min-h-[5rem] py-4 bg-[#0a0a0a] border-b border-white/10 flex flex-wrap items-center px-4 md:px-8 justify-between gap-4 shrink-0">
+                <h2 className="font-heading text-xl sm:text-2xl font-bold uppercase text-white tracking-widest">Gestione Rosa</h2>
+                <div className="flex flex-wrap items-center gap-2 sm:space-x-4">
                     <button
                         onClick={syncStatsFromMatches}
-                        className="flex items-center space-x-2 bg-white/5 text-gray-400 px-4 py-2 rounded text-xs font-bold uppercase tracking-wider hover:bg-white/10 hover:text-[#ff5a00] transition-all border border-white/10"
+                        className="flex items-center space-x-2 bg-white/5 text-gray-400 px-3 py-2 sm:px-4 rounded text-xs font-bold uppercase tracking-wider hover:bg-white/10 hover:text-[#ff5a00] transition-all border border-white/10"
                         title="Sincronizza le statistiche dai tabellini delle partite"
                         disabled={loading}
                     >
                         <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
-                        <span>Sincronizza Statistiche</span>
+                        <span className="hidden sm:inline">Sincronizza Statistiche</span>
                     </button>
                     <button
                         onClick={() => handleOpenModal()}
-                        className="bg-[#ff5a00] text-white px-4 py-2 rounded text-sm font-bold uppercase tracking-wider hover:bg-[#e04e00] transition-colors shadow-lg shadow-[#ff5a00]/20"
+                        className="bg-[#ff5a00] text-white px-3 py-2 sm:px-4 rounded text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-[#e04e00] transition-colors shadow-lg shadow-[#ff5a00]/20"
                     >
-                        + Aggiungi Giocatore
+                        + Aggiungi <span className="hidden sm:inline">Giocatore</span>
                     </button>
                 </div>
             </header>
@@ -340,13 +340,13 @@ export default function PlayersManager() {
                             initial={{ scale: 0.95, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.95, opacity: 0 }}
-                            className="bg-[#0f0f0f] border border-white/10 rounded-lg shadow-2xl w-full max-w-4xl p-6 md:p-8 my-8"
+                            className="bg-[#0f0f0f] border border-white/10 rounded-lg shadow-2xl w-full max-w-[calc(100vw-2rem)] md:max-w-4xl p-4 sm:p-6 md:p-8 my-4 sm:my-8 flex flex-col overflow-hidden"
                         >
-                            <div className="flex justify-between items-center mb-6 border-b border-white/10 pb-4">
-                                <h3 className="font-heading text-2xl font-bold uppercase text-white tracking-widest">
+                            <div className="flex justify-between items-center mb-4 sm:mb-6 border-b border-white/10 pb-4 shrink-0">
+                                <h3 className="font-heading text-xl sm:text-2xl font-bold uppercase text-white tracking-wider sm:tracking-widest">
                                     {editingId ? "Modifica Giocatore" : "Nuovo Giocatore"}
                                 </h3>
-                                <button onClick={handleCloseModal} className="text-gray-400 hover:text-white transition-colors">
+                                <button onClick={handleCloseModal} className="text-gray-400 hover:text-white transition-colors shrink-0">
                                     <X className="w-6 h-6" />
                                 </button>
                             </div>
